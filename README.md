@@ -1,2 +1,2 @@
-# circumrota.github.io
-cigar label app
+# circumrota
+single page application to print labels for cigars

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circumrota - Cigar Label Printer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CIRCUMROTA</h1>
+        <p>Cigar Label Printer</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <form id="labelForm">
+                <div class="form-group">
+                    <label for="barcode">Barcode *</label>
+                    <input type="text" id="barcode" name="barcode" value="123456" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <input type="text" id="description" name="description" value="cigar test" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price *</label>
+                    <input type="number" id="price" name="price" step="0.01" min="0" value="12.34" required placeholder="19.99">
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Number of Labels</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="2" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Generate Preview</button>
+            </form>
+        </section>
+
+        <section class="preview-section" id="previewSection" style="display: none;">
+            <h2>Label Preview</h2>
+            <div id="previewContainer" class="preview-container"></div>
+            <button type="button" id="printBtn" class="btn-primary">Print Labels</button>
+        </section>
+
+        <div id="printArea" class="print-area"></div>
+    </main>
+
+    <footer>
+        <p>Version 1.1.1</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
