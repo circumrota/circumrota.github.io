@@ -220,13 +220,16 @@ main {
     
     @page {
         margin: 0;
+        size: auto;
     }
     
     .print-area {
         display: block !important;
         margin: 0;
         padding: 0;
-        position: static;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     
     /* Actual label for printing */
@@ -238,7 +241,7 @@ main {
         position: relative;
         padding: 2px;
         box-sizing: border-box;
-        border: 1px solid #ccc;
+        border: none;
         page-break-inside: avoid;
         page-break-after: always;
         overflow: hidden;
