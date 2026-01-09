@@ -273,7 +273,8 @@ main {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-left: 2px;
+        margin-left: 1px;
+        overflow: hidden;
     }
     
     .label-print .label-description {
@@ -285,6 +286,7 @@ main {
         white-space: nowrap;
         width: 100%;
         line-height: 1.2;
+        max-width: 100%;
     }
     
     .label-print .label-price {
