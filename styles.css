@@ -235,8 +235,8 @@ main {
     
     /* Actual label for printing */
     .label-print {
-        width: 85px;
-        height: 44px;
+        width: 90px;
+        height: 46px;
         display: flex;
         background-color: white;
         position: relative;
