@@ -21,27 +21,18 @@ The vision is to make a single page application to print price tag labels for ci
 * Price validation: Accept numeric input only (cents optional), display formatted as USD with $ symbol and 2 decimal places
 * Field requirements: Barcode, description, and price are all required fields
 * Default number of labels to print: 1
-* Versioning: Auto-generated using UTC timestamp format (Major.Minor.YYYYMMDDHHMMSS)
-* Deployment: Netlify with automated build process that injects version on each deploy
+* Versioning: Auto-generated using UTC timestamp format (Major.Minor.YYYYMMDDHHMM)
+* Deployment: GitHub Pages with GitHub Actions workflow that runs build process and injects version on each push
 * Print layout: Each label prints on a separate page using page-break-after CSS
 
 ## Label Design
 * Label dimensions: 1" width × 0.5" height
-* Print implementation: 85px × 44px (pixel-based due to browser @page directive not reliably handling custom sizes)
+* Print implementation: 90px × 46px (pixel-based due to browser @page directive not reliably handling custom sizes)
 * Brand colors: Gold (#DAB370) and Black (#000000)
 * Barcode type: QR Code (scanner is Scanmatic 2D SM420N+ which supports 2D barcodes)
 * Layout:
-  * Barcode: Left side, approximately 0.4" × 0.4"
-  * Description: Top right, primary product name
-  * Price: Bottom right, prominent display
-* Font sizing: To be optimized for readability at small scale
-* Long descriptions will auto-truncate with ellipsis to fit label space
-
-## Notes (Temporary - Remove for Production)
-* Current testing state: QR code hidden, price hidden, description-only display
-* Test defaults in form inputs:
-  * Barcode: 123456
-  * Description: cigar test
-  * Price: 12.34
-  * Quantity: 2
-
+  * Barcode: Left side, 38px × 38px (approximately 0.4" × 0.4")
+  * Description: Top right, primary product name, supports up to 2 lines with automatic wrapping
+  * Price: Bottom right, same font weight and color as description
+* Font sizing: Description at 7pt, Price at 9pt, both font-weight 600
+* Long descriptions wrap to 2 lines maximum and truncate if exceeding available space
