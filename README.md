@@ -1,4 +1,4 @@
 # circumrota
 single page application to print labels for cigars
 
-[![Visit Site](https://img.shields.io/badge/Visit-Site-DAB370?style=for-the-badge)](https://circumrota.github.io/)
+<a href="https://circumrota.github.io/" target="_blank"><img src="https://img.shields.io/badge/Visit-Site-DAB370?style=for-the-badge" alt="Visit Site"></a>
