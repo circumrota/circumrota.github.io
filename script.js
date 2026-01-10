@@ -51,11 +51,6 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-preview';
     
-    // QR Code container
-    const qrContainer = document.createElement('div');
-    qrContainer.className = 'qr-container';
-    qrContainer.id = `preview-qr-${labelNumber}`;
-    
     // Label info
     const labelInfo = document.createElement('div');
     labelInfo.className = 'label-info';
@@ -68,22 +63,28 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
     priceDiv.className = 'label-price';
     priceDiv.textContent = price;
     
+    // Barcode container
+    const barcodeContainer = document.createElement('div');
+    barcodeContainer.className = 'barcode-container';
+    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    barcodeSvg.id = `preview-barcode-${labelNumber}`;
+    barcodeContainer.appendChild(barcodeSvg);
+    
     labelInfo.appendChild(descriptionDiv);
     labelInfo.appendChild(priceDiv);
+    labelInfo.appendChild(barcodeContainer);
     
-    labelDiv.appendChild(qrContainer);
     labelDiv.appendChild(labelInfo);
     
     previewContainer.appendChild(labelDiv);
     
-    // Generate QR code
-    new QRCode(qrContainer, {
-        text: barcode,
-        width: 80,
-        height: 80,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.M
+    // Generate Code 128 barcode
+    JsBarcode(`#preview-barcode-${labelNumber}`, barcode, {
+        format: 'CODE128',
+        width: 2,
+        height: 40,
+        displayValue: false,
+        margin: 0
     });
 }
 
@@ -92,12 +93,6 @@ function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
     
-    // QR Code container
-    const qrContainer = document.createElement('div');
-    qrContainer.className = 'qr-container';
-    const qrId = 'print-qr-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-    qrContainer.id = qrId;
-    
     // Label info
     const labelInfo = document.createElement('div');
     labelInfo.className = 'label-info';
@@ -110,21 +105,28 @@ function createPrintLabel(barcode, description, price) {
     priceDiv.className = 'label-price';
     priceDiv.textContent = price;
     
+    // Barcode container
+    const barcodeContainer = document.createElement('div');
+    barcodeContainer.className = 'barcode-container';
+    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    barcodeSvg.id = barcodeId;
+    barcodeContainer.appendChild(barcodeSvg);
+    
     labelInfo.appendChild(descriptionDiv);
     labelInfo.appendChild(priceDiv);
+    labelInfo.appendChild(barcodeContainer);
     
-    labelDiv.appendChild(qrContainer);
     labelDiv.appendChild(labelInfo);
     
     printArea.appendChild(labelDiv);
     
-    // Generate QR code for print
-    new QRCode(qrContainer, {
-        text: barcode,
-        width: 28,
-        height: 28,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.M
+    // Generate Code 128 barcode for print
+    JsBarcode(`#${barcodeId}`, barcode, {
+        format: 'CODE128',
+        width: 1,
+        height: 20,
+        displayValue: false,
+        margin: 0
     });
 }
