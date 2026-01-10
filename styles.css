@@ -178,7 +178,7 @@ main {
 }
 
 .label-preview .label-price {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: bold;
     color: var(--black);
     margin-bottom: 0.25rem;
@@ -191,10 +191,13 @@ main {
     align-items: center;
     margin-top: auto;
     padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+    max-height: 40px;
+    overflow: hidden;
 }
 
 .label-preview .barcode-container svg {
     max-width: 100%;
+    max-height: 18px;
     height: auto;
 }
 
