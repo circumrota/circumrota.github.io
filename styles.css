@@ -190,7 +190,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: auto;
-    padding: 0.5rem 0.25rem;
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
 }
 
 .label-preview .barcode-container svg {
