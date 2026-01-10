@@ -121,8 +121,8 @@ function createPrintLabel(barcode, description, price) {
     // Generate QR code for print
     new QRCode(qrContainer, {
         text: barcode,
-        width: 38,
-        height: 38,
+        width: 32,
+        height: 32,
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.M
