@@ -257,16 +257,16 @@ main {
         width: 38px;
         height: 38px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-end;
+        justify-content: flex-end;
         flex-shrink: 0;
         background-color: white;
-        padding: 3px;
+        padding: 7px 3px 3px 7px;
     }
     
     .label-print .qr-container canvas {
-        width: 32px !important;
-        height: 32px !important;
+        width: 28px !important;
+        height: 28px !important;
         display: block;
     }
     
