@@ -125,7 +125,7 @@ function createPrintLabel(barcode, description, price) {
     JsBarcode(`#${barcodeId}`, barcode, {
         format: 'CODE128',
         width: 1,
-        height: 20,
+        height: 15,
         displayValue: false,
         margin: 0
     });

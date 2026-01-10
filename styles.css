@@ -190,7 +190,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: auto;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0.25rem;
 }
 
 .label-preview .barcode-container svg {
@@ -242,7 +242,7 @@ main {
         flex-direction: column;
         background-color: white;
         position: relative;
-        padding: 2mm;
+        padding: 1.5mm;
         box-sizing: border-box;
         border: none;
         page-break-inside: avoid;
@@ -263,7 +263,7 @@ main {
     }
     
     .label-print .label-description {
-        font-size: 8pt;
+        font-size: 7pt;
         font-weight: 600;
         color: black;
         overflow: hidden;
@@ -271,17 +271,17 @@ main {
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         width: 100%;
-        line-height: 1.2;
-        margin-bottom: 1mm;
+        line-height: 1.1;
+        margin-bottom: 0.5mm;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
     
     .label-print .label-price {
-        font-size: 10pt;
+        font-size: 9pt;
         font-weight: bold;
         color: black;
-        margin-bottom: 1mm;
+        margin-bottom: 0.5mm;
     }
     
     .label-print .barcode-container {
@@ -291,14 +291,14 @@ main {
         align-items: flex-end;
         margin-top: auto;
         background-color: white;
-        padding: 1mm 0;
+        padding: 0.5mm 0;
         overflow: hidden;
-        max-height: 15mm;
+        max-height: 12mm;
     }
     
     .label-print .barcode-container svg {
         max-width: 86mm;
-        max-height: 15mm;
+        max-height: 12mm;
         height: auto;
     }
 }
