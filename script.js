@@ -82,7 +82,7 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
     JsBarcode(`#preview-barcode-${labelNumber}`, barcode, {
         format: 'CODE128',
         width: 2,
-        height: 40,
+        height: 25,
         displayValue: false,
         margin: 0
     });

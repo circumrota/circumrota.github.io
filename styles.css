@@ -180,7 +180,7 @@ main {
 .label-preview .label-price {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--gold);
+    color: var(--black);
     margin-bottom: 0.25rem;
 }
 
@@ -190,6 +190,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: auto;
+    padding: 0.25rem 0;
 }
 
 .label-preview .barcode-container svg {
@@ -221,7 +222,7 @@ main {
     
     @page {
         margin: 0;
-        size: auto;
+        size: 90mm 46mm;
     }
     
     .print-area {
@@ -272,6 +273,8 @@ main {
         width: 100%;
         line-height: 1.2;
         margin-bottom: 1mm;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .label-print .label-price {
@@ -289,10 +292,13 @@ main {
         margin-top: auto;
         background-color: white;
         padding: 1mm 0;
+        overflow: hidden;
+        max-height: 15mm;
     }
     
     .label-print .barcode-container svg {
-        max-width: 100%;
+        max-width: 86mm;
+        max-height: 15mm;
         height: auto;
     }
 }
