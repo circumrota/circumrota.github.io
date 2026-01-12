@@ -263,13 +263,6 @@ main {
         page-break-after: auto;
     }
     
-    .label-print > * {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    
     .label-print canvas {
         display: block;
         margin: 0 0 2px 0;
