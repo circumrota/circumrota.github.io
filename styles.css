@@ -216,11 +216,12 @@ main {
     
     body {
         margin: 0;
-        padding: 20px;
+        padding: 0;
     }
     
     .print-area {
         display: block !important;
+        padding: 10px;
     }
     
     .label-print {
@@ -233,6 +234,7 @@ main {
     
     .label-print canvas {
         display: inline-block;
+        max-width: 100%;
     }
 }
 

@@ -106,9 +106,9 @@ function createPrintLabel(barcode, description, price) {
         JsBarcode(barcodeCanvas, barcode, {
             format: 'CODE128',
             width: 1,
-            height: 30,
+            height: 25,
             displayValue: false,
-            margin: 5
+            margin: 0
         });
     } catch (e) {
         console.error('Barcode generation failed:', e);
