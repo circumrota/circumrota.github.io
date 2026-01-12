@@ -96,7 +96,7 @@ function createPrintLabel(barcode, description, price) {
     
     // Barcode container
     const barcodeContainer = document.createElement('div');
-    barcodeContainer.style.cssText = 'width: 100%; text-align: center; margin-bottom: 4px;';
+    barcodeContainer.style.cssText = 'width: 100%; margin-bottom: 4px;';
     const barcodeCanvas = document.createElement('canvas');
     const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
     barcodeCanvas.id = barcodeId;
