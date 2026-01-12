@@ -218,9 +218,6 @@ main {
     body {
         margin: 0;
         padding: 0;
-        width: auto;
-        height: auto;
-        overflow: hidden;
     }
     
     @page {
@@ -232,9 +229,6 @@ main {
         display: block !important;
         margin: 0;
         padding: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     
     /* Actual label for printing */
