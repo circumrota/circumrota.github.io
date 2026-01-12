@@ -283,8 +283,9 @@ main {
         margin: 0 0 2px 0;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        white-space: normal;
-        max-height: 17pt;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         overflow: hidden;
     }
     
