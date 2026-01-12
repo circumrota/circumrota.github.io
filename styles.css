@@ -203,9 +203,7 @@ main {
 
 /* Print Styles */
 .print-area {
-    display: block;
-    border: 2px solid red;
-    margin-top: 20px;
+    display: none;
 }
 
 @media print {
