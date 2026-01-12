@@ -92,14 +92,15 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
 function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
+    labelDiv.style.cssText = 'width: 340px; height: 174px; padding: 4px; box-sizing: border-box; page-break-after: always;';
     
     // Barcode container
     const barcodeContainer = document.createElement('div');
-    barcodeContainer.className = 'barcode-container';
-    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    barcodeContainer.style.cssText = 'width: 100%; text-align: center; margin-bottom: 4px;';
+    const barcodeCanvas = document.createElement('canvas');
     const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-    barcodeSvg.id = barcodeId;
-    barcodeContainer.appendChild(barcodeSvg);
+    barcodeCanvas.id = barcodeId;
+    barcodeContainer.appendChild(barcodeCanvas);
     
     const descriptionDiv = document.createElement('div');
     descriptionDiv.className = 'label-description';
