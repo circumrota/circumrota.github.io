@@ -237,6 +237,9 @@ main {
         margin: 0;
         padding: 0;
         overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     
     /* Actual label for printing */
@@ -251,7 +254,9 @@ main {
         page-break-inside: avoid;
         margin: 0;
         overflow: hidden;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     
     .label-print:last-child {
