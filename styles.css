@@ -248,7 +248,7 @@ main {
         height: 174px;
         display: block;
         background-color: white;
-        padding: 4px;
+        padding: 2px;
         box-sizing: border-box;
         page-break-after: always;
         page-break-inside: avoid;
@@ -277,16 +277,20 @@ main {
     
     .label-print .label-description {
         font-size: 7pt;
-        font-weight: 600;
+        font-weight: normal;
         color: black;
-        line-height: 1.1;
+        line-height: 1.2;
         margin: 0 0 2px 0;
         word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-height: 17pt;
+        overflow: hidden;
     }
     
     .label-print .label-price {
         font-size: 9pt;
-        font-weight: bold;
+        font-weight: normal;
         color: black;
         margin: 0;
     }
