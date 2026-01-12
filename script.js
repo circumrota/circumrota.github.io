@@ -92,7 +92,7 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
 function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
-    labelDiv.style.cssText = 'width: 336px; height: 170px; padding: 2px; margin: 0; overflow: hidden; page-break-after: always;';
+    labelDiv.style.cssText = 'width: 296px; height: 146px; padding: 2px; margin: 0; overflow: hidden; page-break-after: always;';
     
     // Barcode container
     const barcodeContainer = document.createElement('div');
@@ -121,7 +121,7 @@ function createPrintLabel(barcode, description, price) {
         JsBarcode(barcodeCanvas, barcode, {
             format: 'CODE128',
             width: 1,
-            height: 15,
+            height: 12,
             displayValue: false,
             margin: 0
         });
