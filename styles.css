@@ -235,16 +235,14 @@ main {
     .label-print {
         width: 340px;
         height: 174px;
-        display: flex;
-        flex-direction: column;
+        display: block;
         background-color: white;
         position: relative;
-        padding: 6px;
+        padding: 4px;
         box-sizing: border-box;
         border: none;
         page-break-inside: avoid;
         page-break-after: always;
-        overflow: hidden;
         margin: 0;
     }
     
@@ -253,10 +251,9 @@ main {
     }
     
     .label-print .label-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+        display: block;
         width: 100%;
+        height: 100%;
     }
     
     .label-print .label-description {
@@ -278,25 +275,18 @@ main {
         font-size: 9pt;
         font-weight: bold;
         color: black;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
     }
     
     .label-print .barcode-container {
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        margin-top: auto;
-        background-color: white;
-        padding: 2px 0;
-        overflow: hidden;
-        max-height: 45px;
+        display: block;
+        text-align: center;
     }
     
     .label-print .barcode-container svg {
-        max-width: 328px;
-        max-height: 45px;
-        height: auto;
+        display: inline-block;
+        max-width: 100%;
     }
 }
 
