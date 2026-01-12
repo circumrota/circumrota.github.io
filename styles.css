@@ -234,14 +234,12 @@ main {
     /* Actual label for printing */
     .label-print {
         width: 340px;
-        height: 174px;
+        min-height: 174px;
+        max-height: 174px;
         display: block;
         background-color: white;
-        position: relative;
         padding: 4px;
         box-sizing: border-box;
-        border: none;
-        page-break-inside: avoid;
         page-break-after: always;
         margin: 0;
     }
