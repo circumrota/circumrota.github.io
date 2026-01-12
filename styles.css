@@ -217,14 +217,12 @@ main {
         display: none !important;
     }
     
-    * {
+    html, body {
+        width: 340px;
+        height: 174px;
         margin: 0;
         padding: 0;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
+        overflow: hidden;
     }
     
     @page {
@@ -234,57 +232,58 @@ main {
     
     .print-area {
         display: block !important;
+        width: 340px;
+        height: 174px;
         margin: 0;
         padding: 0;
+        overflow: hidden;
     }
     
     /* Actual label for printing */
     .label-print {
-        width: 340px !important;
-        height: 174px !important;
-        display: block !important;
+        width: 340px;
+        height: 174px;
+        display: block;
         background-color: white;
-        padding: 4px !important;
-        box-sizing: border-box !important;
-        page-break-after: always !important;
-        margin: 0 !important;
-        overflow: hidden !important;
+        padding: 4px;
+        box-sizing: border-box;
+        page-break-after: always;
+        page-break-inside: avoid;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
     }
     
     .label-print:last-child {
-        page-break-after: auto !important;
+        page-break-after: auto;
     }
     
-    .label-print .barcode-container {
-        display: block !important;
-        width: 100% !important;
-        margin: 0 0 4px 0 !important;
-        padding: 0 !important;
+    .label-print > * {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
     
-    .label-print .barcode-container canvas {
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    .label-print canvas {
+        display: block;
+        margin: 0 0 2px 0;
     }
     
     .label-print .label-description {
-        font-size: 7pt !important;
-        font-weight: 600 !important;
-        color: black !important;
-        line-height: 1.1 !important;
-        margin: 0 0 2px 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        word-wrap: break-word !important;
+        font-size: 7pt;
+        font-weight: 600;
+        color: black;
+        line-height: 1.1;
+        margin: 0 0 2px 0;
+        word-wrap: break-word;
     }
     
     .label-print .label-price {
-        font-size: 9pt !important;
-        font-weight: bold !important;
-        color: black !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        font-size: 9pt;
+        font-weight: bold;
+        color: black;
+        margin: 0;
     }
 }
 
