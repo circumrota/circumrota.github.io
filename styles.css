@@ -217,7 +217,12 @@ main {
         display: none !important;
     }
     
-    html, body {
+    html {
+        width: 340px;
+        height: 174px;
+    }
+    
+    body {
         width: 340px;
         height: 174px;
         margin: 0;
@@ -226,8 +231,8 @@ main {
     }
     
     @page {
+        size: 3.54in 1.81in;
         margin: 0;
-        size: 340px 174px;
     }
     
     .print-area {
@@ -237,26 +242,17 @@ main {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     
-    /* Actual label for printing */
     .label-print {
-        width: 340px;
-        height: 174px;
+        width: 336px;
+        height: 170px;
         display: block;
         background-color: white;
         padding: 2px;
-        box-sizing: border-box;
-        page-break-after: always;
-        page-break-inside: avoid;
         margin: 0;
         overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
+        page-break-after: always;
     }
     
     .label-print:last-child {
@@ -266,6 +262,8 @@ main {
     .label-print canvas {
         display: block;
         margin: 0 0 2px 0;
+        max-width: 330px;
+        height: auto;
     }
     
     .label-print .label-description {
