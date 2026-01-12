@@ -209,7 +209,6 @@ main {
 }
 
 @media print {
-    /* Hide screen content */
     header,
     .form-section,
     .preview-section,
@@ -217,77 +216,32 @@ main {
         display: none !important;
     }
     
-    html {
-        width: 300px;
-        height: 150px;
-    }
-    
     body {
-        width: 300px;
-        height: 150px;
         margin: 0;
         padding: 0;
-        overflow: hidden;
     }
     
     @page {
-        size: 3.13in 1.56in;
         margin: 0;
     }
     
     .print-area {
-        display: block !important;
-        width: 300px;
-        height: 150px;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
     }
     
     .label-print {
-        width: 296px;
-        height: 146px;
-        display: block;
-        background-color: white;
-        padding: 2px;
-        margin: 0;
-        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         page-break-after: always;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    .label-print:last-child {
-        page-break-after: auto;
     }
     
     .label-print canvas {
         display: block;
-        margin: 0 0 2px 0;
-    }
-    
-    .label-print .label-description {
-        font-size: 6pt;
-        font-weight: normal;
-        color: black;
-        line-height: 1.2;
-        margin: 0 0 1px 0;
-        display: block;
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
-    }
-    
-    .label-print .label-price {
-        font-size: 8pt;
-        font-weight: normal;
-        color: black;
-        margin: 0;
     }
 }
 

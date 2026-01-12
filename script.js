@@ -92,41 +92,26 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
 function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
-    labelDiv.style.cssText = 'width: 296px; height: 146px; padding: 2px; margin: 0; overflow: hidden; page-break-after: always;';
     
     // Barcode container
-    const barcodeContainer = document.createElement('div');
-    barcodeContainer.style.cssText = 'width: 100%; margin-bottom: 2px;';
     const barcodeCanvas = document.createElement('canvas');
     const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
     barcodeCanvas.id = barcodeId;
-    barcodeContainer.appendChild(barcodeCanvas);
     
-    const descriptionDiv = document.createElement('div');
-    descriptionDiv.className = 'label-description';
-    descriptionDiv.textContent = description;
-    
-    const priceDiv = document.createElement('div');
-    priceDiv.className = 'label-price';
-    priceDiv.textContent = price;
-    
-    labelDiv.appendChild(barcodeContainer);
-    labelDiv.appendChild(descriptionDiv);
-    labelDiv.appendChild(priceDiv);
-    
+    labelDiv.appendChild(barcodeCanvas);
     printArea.appendChild(labelDiv);
     
-    // Generate Code 128 barcode for print - use direct reference
+    // Generate Code 128 barcode for print
     try {
         JsBarcode(barcodeCanvas, barcode, {
             format: 'CODE128',
-            width: 1,
-            height: 12,
+            width: 2,
+            height: 40,
             displayValue: false,
-            margin: 0
+            margin: 10
         });
     } catch (e) {
         console.error('Barcode generation failed:', e);
-        barcodeContainer.textContent = barcode;
+        labelDiv.textContent = barcode;
     }
 }
