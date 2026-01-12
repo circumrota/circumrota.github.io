@@ -101,10 +101,6 @@ function createPrintLabel(barcode, description, price) {
     barcodeSvg.id = barcodeId;
     barcodeContainer.appendChild(barcodeSvg);
     
-    // Label info
-    const labelInfo = document.createElement('div');
-    labelInfo.className = 'label-info';
-    
     const descriptionDiv = document.createElement('div');
     descriptionDiv.className = 'label-description';
     descriptionDiv.textContent = description;
@@ -114,10 +110,8 @@ function createPrintLabel(barcode, description, price) {
     priceDiv.textContent = price;
     
     labelDiv.appendChild(barcodeContainer);
-    labelInfo.appendChild(descriptionDiv);
-    labelInfo.appendChild(priceDiv);
-    
-    labelDiv.appendChild(labelInfo);
+    labelDiv.appendChild(descriptionDiv);
+    labelDiv.appendChild(priceDiv);
     
     printArea.appendChild(labelDiv);
     
