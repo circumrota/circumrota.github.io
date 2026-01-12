@@ -51,6 +51,13 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-preview';
     
+    // Barcode container
+    const barcodeContainer = document.createElement('div');
+    barcodeContainer.className = 'barcode-container';
+    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    barcodeSvg.id = `preview-barcode-${labelNumber}`;
+    barcodeContainer.appendChild(barcodeSvg);
+    
     // Label info
     const labelInfo = document.createElement('div');
     labelInfo.className = 'label-info';
@@ -63,16 +70,9 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
     priceDiv.className = 'label-price';
     priceDiv.textContent = price;
     
-    // Barcode container
-    const barcodeContainer = document.createElement('div');
-    barcodeContainer.className = 'barcode-container';
-    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    barcodeSvg.id = `preview-barcode-${labelNumber}`;
-    barcodeContainer.appendChild(barcodeSvg);
-    
+    labelDiv.appendChild(barcodeContainer);
     labelInfo.appendChild(descriptionDiv);
     labelInfo.appendChild(priceDiv);
-    labelInfo.appendChild(barcodeContainer);
     
     labelDiv.appendChild(labelInfo);
     
@@ -93,6 +93,14 @@ function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
     
+    // Barcode container
+    const barcodeContainer = document.createElement('div');
+    barcodeContainer.className = 'barcode-container';
+    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+    barcodeSvg.id = barcodeId;
+    barcodeContainer.appendChild(barcodeSvg);
+    
     // Label info
     const labelInfo = document.createElement('div');
     labelInfo.className = 'label-info';
@@ -105,17 +113,9 @@ function createPrintLabel(barcode, description, price) {
     priceDiv.className = 'label-price';
     priceDiv.textContent = price;
     
-    // Barcode container
-    const barcodeContainer = document.createElement('div');
-    barcodeContainer.className = 'barcode-container';
-    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-    barcodeSvg.id = barcodeId;
-    barcodeContainer.appendChild(barcodeSvg);
-    
+    labelDiv.appendChild(barcodeContainer);
     labelInfo.appendChild(descriptionDiv);
     labelInfo.appendChild(priceDiv);
-    labelInfo.appendChild(barcodeContainer);
     
     labelDiv.appendChild(labelInfo);
     
