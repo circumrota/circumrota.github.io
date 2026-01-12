@@ -225,6 +225,9 @@ main {
     
     .label-print {
         text-align: center;
+    }
+    
+    .label-print:not(:last-child) {
         page-break-after: always;
     }
     
