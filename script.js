@@ -116,12 +116,17 @@ function createPrintLabel(barcode, description, price) {
     
     printArea.appendChild(labelDiv);
     
-    // Generate Code 128 barcode for print
-    JsBarcode(`#${barcodeId}`, barcode, {
-        format: 'CODE128',
-        width: 1,
-        height: 15,
-        displayValue: false,
-        margin: 0
-    });
+    // Generate Code 128 barcode for print - use direct reference
+    try {
+        JsBarcode(barcodeCanvas, barcode, {
+            format: 'CODE128',
+            width: 1,
+            height: 15,
+            displayValue: false,
+            margin: 0
+        });
+    } catch (e) {
+        console.error('Barcode generation failed:', e);
+        barcodeContainer.textContent = barcode;
+    }
 }
