@@ -229,14 +229,28 @@ main {
         border: 1px solid white;
         overflow: hidden;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         box-sizing: border-box;
     }
     
     .label-print canvas {
         display: block;
-        /* margin: 0 auto;  No longer needed with flex */
+        margin: 0 auto;
+        transform: translate(-10%, -10%);
+    }
+
+    .label-print .label-description {
+        font-size: 9px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1;
+        margin: 2px 4px 0 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
     }
 }
 

@@ -92,15 +92,21 @@ function createPreviewLabel(barcode, description, price, labelNumber) {
 function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
-    
-    // Barcode container
+
+    // Barcode canvas
     const barcodeCanvas = document.createElement('canvas');
     const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
     barcodeCanvas.id = barcodeId;
-    
     labelDiv.appendChild(barcodeCanvas);
+
+    // Description below the barcode
+    const descDiv = document.createElement('div');
+    descDiv.className = 'label-description';
+    descDiv.textContent = description || '';
+    labelDiv.appendChild(descDiv);
+
     printArea.appendChild(labelDiv);
-    
+
     // Generate Code 128 barcode for print
     try {
         JsBarcode(barcodeCanvas, barcode, {
