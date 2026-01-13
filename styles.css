@@ -228,13 +228,15 @@ main {
         height: 70px;
         border: 1px solid white;
         overflow: hidden;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
         box-sizing: border-box;
     }
     
     .label-print canvas {
         display: block;
-        margin: 0 auto;
+        /* margin: 0 auto;  No longer needed with flex */
     }
 }
 
