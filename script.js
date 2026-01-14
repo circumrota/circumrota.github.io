@@ -1,7 +1,5 @@
 // Form and UI elements
 const labelForm = document.getElementById('labelForm');
-const previewSection = document.getElementById('previewSection');
-const previewContainer = document.getElementById('previewContainer');
 const printArea = document.getElementById('printArea');
 const printBtn = document.getElementById('printBtn');
 
@@ -19,20 +17,12 @@ labelForm.addEventListener('submit', (e) => {
     const price = formatPrice(priceInput);
     
     // Clear previous previews
-    previewContainer.innerHTML = '';
     printArea.innerHTML = '';
-    
-    // Generate labels
+
+    // Generate print-only labels
     for (let i = 0; i < quantity; i++) {
-        createPreviewLabel(barcode, description, price, i + 1);
         createPrintLabel(barcode, description, price);
     }
-    
-    // Show preview section
-    previewSection.style.display = 'block';
-    
-    // Scroll to preview
-    previewSection.scrollIntoView({ behavior: 'smooth' });
 });
 
 // Print button handler
@@ -46,47 +36,7 @@ function formatPrice(price) {
     return '$' + numPrice.toFixed(2);
 }
 
-// Create preview label (for screen display)
-function createPreviewLabel(barcode, description, price, labelNumber) {
-    const labelDiv = document.createElement('div');
-    labelDiv.className = 'label-preview';
-    
-    // Barcode container
-    const barcodeContainer = document.createElement('div');
-    barcodeContainer.className = 'barcode-container';
-    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    barcodeSvg.id = `preview-barcode-${labelNumber}`;
-    barcodeContainer.appendChild(barcodeSvg);
-    
-    // Label info
-    const labelInfo = document.createElement('div');
-    labelInfo.className = 'label-info';
-    
-    const descriptionDiv = document.createElement('div');
-    descriptionDiv.className = 'label-description';
-    descriptionDiv.textContent = description;
-    
-    const priceDiv = document.createElement('div');
-    priceDiv.className = 'label-price';
-    priceDiv.textContent = price;
-    
-    labelDiv.appendChild(barcodeContainer);
-    labelInfo.appendChild(descriptionDiv);
-    labelInfo.appendChild(priceDiv);
-    
-    labelDiv.appendChild(labelInfo);
-    
-    previewContainer.appendChild(labelDiv);
-    
-    // Generate Code 128 barcode
-    JsBarcode(`#preview-barcode-${labelNumber}`, barcode, {
-        format: 'CODE128',
-        width: 2,
-        height: 18,
-        displayValue: false,
-        margin: 0
-    });
-}
+// preview removed — print-only workflow
 
 // Create print label (for actual printing)
 function createPrintLabel(barcode, description, price) {
