@@ -67,12 +67,25 @@ function createPrintLabel(barcode, description, price) {
 
     // Generate Code 128 barcode for print
     try {
+        // Render the canvas at device pixel ratio for crisp output
+        const visibleWidth = 120; // visible barcode width in CSS pixels
+        const visibleHeight = 25; // visible barcode height in CSS pixels
+        const dpr = window.devicePixelRatio || 1;
+        barcodeCanvas.style.width = visibleWidth + 'px';
+        barcodeCanvas.style.height = visibleHeight + 'px';
+        barcodeCanvas.width = Math.round(visibleWidth * dpr);
+        barcodeCanvas.height = Math.round(visibleHeight * dpr);
+
+        const modules = 11 * String(barcode).length + 35;
+        let moduleWidth = Math.floor(barcodeCanvas.width / modules); // in canvas pixels
+        if (moduleWidth < 1) moduleWidth = 1;
+
         JsBarcode(barcodeCanvas, barcode, {
             format: 'CODE128',
-            width: 1,
-            height: 25,
+            width: moduleWidth,
+            height: barcodeCanvas.height,
             displayValue: false,
-            margin: 0
+            margin: 2
         });
     } catch (e) {
         console.error('Barcode generation failed:', e);
