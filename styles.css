@@ -238,7 +238,6 @@ main {
     .label-print canvas {
         display: block;
         margin: 0 auto;
-        transform: translate(-10%, -10%);
     }
 
     .label-print .label-description {
@@ -252,6 +251,28 @@ main {
         text-overflow: ellipsis;
         width: 100%;
     }
+
+    /* Barcode/description wrappers used for print layout */
+    .barcode-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        top: -10px;
+    }
+
+    .barcode-wrap canvas {
+        display: block;
+        margin: 0;
+    }
+
+    .desc-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 /* Responsive Design */
@@ -263,35 +284,5 @@ main {
     .form-section,
     .preview-section {
         padding: 1.5rem;
-        .label-print {
-            width: 140px;
-            height: 70px;
-            border: 1px solid white;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            box-sizing: border-box;
-            padding: 2px;
-        }
-
-        /* New wrappers to avoid clipping when shifting */
-        .barcode-wrap {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .barcode-wrap canvas {
-            display: block;
-            margin: 0;
-        }
-
-        .desc-wrap {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    }
+}
