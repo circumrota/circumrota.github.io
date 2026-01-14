@@ -7,7 +7,13 @@ labelForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Get form values
-    const barcode = document.getElementById('barcode').value.trim();
+    const barcodeEl = document.getElementById('barcode');
+    let barcode = barcodeEl.value.trim();
+    // Enforce 20-character limit (keeps input and printed value consistent)
+    if (barcode.length > 20) {
+        barcode = barcode.slice(0, 20);
+        barcodeEl.value = barcode;
+    }
     const description = document.getElementById('description').value.trim();
     const priceInput = document.getElementById('price').value;
     const quantity = parseInt(document.getElementById('quantity').value);
@@ -63,10 +69,10 @@ function createPrintLabel(barcode, description, price) {
     try {
         JsBarcode(barcodeCanvas, barcode, {
             format: 'CODE128',
-            width: 1,
+            width: 0.5,
             height: 25,
             displayValue: false,
-            margin: 0
+            margin: 2
         });
     } catch (e) {
         console.error('Barcode generation failed:', e);

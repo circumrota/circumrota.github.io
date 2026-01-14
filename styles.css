@@ -269,10 +269,13 @@ main {
     }
 
     .desc-wrap {
-        width: 100%;
+        width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 50px;
+        margin-left: -30px;
     }
 }
 
