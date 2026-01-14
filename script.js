@@ -1,7 +1,6 @@
 // Form and UI elements
 const labelForm = document.getElementById('labelForm');
 const printArea = document.getElementById('printArea');
-const printBtn = document.getElementById('printBtn');
 
 // Form submission handler
 labelForm.addEventListener('submit', (e) => {
@@ -23,10 +22,7 @@ labelForm.addEventListener('submit', (e) => {
     for (let i = 0; i < quantity; i++) {
         createPrintLabel(barcode, description, price);
     }
-});
-
-// Print button handler
-printBtn.addEventListener('click', () => {
+    // Open print dialog after generating labels
     window.print();
 });
 
