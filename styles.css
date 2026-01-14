@@ -263,9 +263,35 @@ main {
     .form-section,
     .preview-section {
         padding: 1.5rem;
-    }
-    
-    .preview-container {
-        justify-content: center;
-    }
-}
+        .label-print {
+            width: 140px;
+            height: 70px;
+            border: 1px solid white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+        /* New wrappers to avoid clipping when shifting */
+        .barcode-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .barcode-wrap canvas {
+            display: block;
+            margin: 0;
+        }
+
+        .desc-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }

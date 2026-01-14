@@ -93,17 +93,23 @@ function createPrintLabel(barcode, description, price) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
 
-    // Barcode canvas
+    // Barcode wrapper
+    const barcodeWrap = document.createElement('div');
+    barcodeWrap.className = 'barcode-wrap';
     const barcodeCanvas = document.createElement('canvas');
     const barcodeId = 'print-barcode-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
     barcodeCanvas.id = barcodeId;
-    labelDiv.appendChild(barcodeCanvas);
+    barcodeWrap.appendChild(barcodeCanvas);
+    labelDiv.appendChild(barcodeWrap);
 
-    // Description below the barcode
+    // Description wrapper (below barcode)
+    const descWrap = document.createElement('div');
+    descWrap.className = 'desc-wrap';
     const descDiv = document.createElement('div');
     descDiv.className = 'label-description';
     descDiv.textContent = description || '';
-    labelDiv.appendChild(descDiv);
+    descWrap.appendChild(descDiv);
+    labelDiv.appendChild(descWrap);
 
     printArea.appendChild(labelDiv);
 
