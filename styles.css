@@ -258,8 +258,9 @@ main {
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        position: relative;
-        top: -10px;
+        position: absolute;
+        top: 20px;
+        margin-left: -40px;
     }
 
     .barcode-wrap canvas {
