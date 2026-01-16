@@ -15,33 +15,26 @@ labelForm.addEventListener('submit', (e) => {
         barcodeEl.value = barcode;
     }
     const description = document.getElementById('description').value.trim();
-    const priceInput = document.getElementById('price').value;
     const quantity = parseInt(document.getElementById('quantity').value);
-    
-    // Format price
-    const price = formatPrice(priceInput);
     
     // Clear previous previews
     printArea.innerHTML = '';
 
     // Generate print-only labels
     for (let i = 0; i < quantity; i++) {
-        createPrintLabel(barcode, description, price);
+        createPrintLabel(barcode, description);
     }
     // Open print dialog after generating labels
     window.print();
 });
 
 // Format price as USD
-function formatPrice(price) {
-    const numPrice = parseFloat(price);
-    return '$' + numPrice.toFixed(2);
-}
+// price removed from application
 
 // preview removed — print-only workflow
 
 // Create print label (for actual printing)
-function createPrintLabel(barcode, description, price) {
+function createPrintLabel(barcode, description) {
     const labelDiv = document.createElement('div');
     labelDiv.className = 'label-print';
 
